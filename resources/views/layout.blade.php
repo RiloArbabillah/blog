@@ -7,7 +7,7 @@
     <title>Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gradient-to-r from-slate-700 to-slate-900">
     @include('header')
     @yield('content')
     @include('footer')
