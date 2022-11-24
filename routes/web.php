@@ -20,9 +20,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    $konten = Konten::get();
     return view('content', [
-        'konten' => $konten
+        'konten' => []
     ]);
 });
 

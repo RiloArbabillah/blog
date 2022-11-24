@@ -9,10 +9,7 @@ class KontenController extends Controller
 {
     public function index(Request $request)
     {
-        $konten = Konten::get();
-        return view('crud.index', [
-            'konten' => $konten
-        ]);
+        # code...
     }
 
     public function create(Request $request)
