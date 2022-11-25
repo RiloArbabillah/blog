@@ -29,7 +29,7 @@ Route::get('/', function () {
 // Routing CRUD Konten
 Route::get('/crud/index', [KontenController::class, 'index'])->name('crud.index');
 Route::get('/crud/create', [KontenController::class, 'create'])->name('crud.create');
-Route::post('/crud/store', [KontenController::class, 'store'])->name('crud.create');
+Route::post('/crud/store', [KontenController::class, 'store'])->name('crud.store');
 Route::get('/crud/edit/{konten}', [KontenController::class, 'edit'])->name('crud.edit');
 Route::put('/crud/update/{konten}', [KontenController::class, 'update'])->name('crud.update');
 Route::delete('/crud/delete/{konten}', [KontenController::class, 'delete'])->name('crud.delete');

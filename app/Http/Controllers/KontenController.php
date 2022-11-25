@@ -17,26 +17,41 @@ class KontenController extends Controller
 
     public function create(Request $request)
     {
-        # code...
+        return view('crud.create');
     }
 
     public function store(Request $request)
     {
-        # code...
+        $input = $request->validate([
+            'judul' => ['required', 'max:200'],
+            'konten' => ['required'],
+        ]);
+        
+        Konten::create($input);
+        return redirect()->route('crud.index');
     }
 
     public function edit(Request $request, Konten $konten)
     {
-        # code...
+        return view('crud.edit', [
+            'konten' => $konten
+        ]);
     }
 
     public function update(Request $request, Konten $konten)
     {
-        # code...
+        $input = $request->validate([
+            'judul' => ['required', 'max:200'],
+            'konten' => ['required'],
+        ]);
+        
+        $konten->update($input);
+        return redirect()->route('crud.index');
     }
 
     public function delete(Request $request, Konten $konten)
     {
-        # code...
+        $konten->delete();
+        return redirect()->back();
     }
 }
